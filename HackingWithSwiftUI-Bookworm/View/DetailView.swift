@@ -32,6 +32,9 @@ struct DetailView: View {
                     .offset(x: -5, y: -5)
             }
             
+            Text("Reviewed On: \(book.date.formatted(date: .abbreviated, time: .omitted))")
+                .padding(.vertical, 3)
+            
             Text(book.author)
                 .font(.title)
                 .foregroundStyle(.secondary)
@@ -68,7 +71,7 @@ struct DetailView: View {
     do {
         let config = ModelConfiguration(isStoredInMemoryOnly: true)
         let container = try ModelContainer(for: Book.self, configurations: config)
-        let example = Book(title: "Test Book", author: "Test Author", genre: "Horror", review: "Awesome!", rating: 4)
+        let example = Book(title: "Test Book", author: "Test Author", genre: "Horror", review: "Awesome!", rating: 4, date: .now)
         
         return DetailView(book: example)
             .modelContainer(container)
