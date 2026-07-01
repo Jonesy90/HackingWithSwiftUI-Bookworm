@@ -3,7 +3,7 @@
 ## Description
 For this project I've built an app to track which books the has read and the users review of that book. With this project, it dives deeper into the SwiftUI, Swift and SwiftData relationship.
 
-## What I Learn't
+## What I Learned
 1. SwiftData
 2. modelContainer
 3. modelContext
